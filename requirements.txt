@@ -1,0 +1,7 @@
+pyodbc == 5.0.1
+pandas == 2.2.3
+numpy == 1.26.3
+openai == 1.10.0
+SQLAlchemy == 2.0.29
+snowflake-connector-python
+snowflake-connector-python[pandas]
