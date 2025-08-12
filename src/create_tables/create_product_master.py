@@ -11,7 +11,7 @@ TABLE_NAME = "PRODUCTMASTER"
 def create_product_master_table(conn):
     """
     Create the PRODUCTMASTER table in Snowflake if it does not exist.
-    
+
     """
     create_sql = f"""
     CREATE OR REPLACE TABLE {TABLE_NAME} (
