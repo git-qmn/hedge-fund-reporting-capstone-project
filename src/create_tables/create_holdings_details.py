@@ -15,6 +15,7 @@ TABLE_NAME = "HOLDINGSDETAILS"
 def create_holdings_details_table(conn):
     """
     Creates the HOLDINGSDETAILS table in Snowflake with the appropriate schema.
+    
     """
     create_sql = f"""
     CREATE OR REPLACE TABLE {TABLE_NAME} (

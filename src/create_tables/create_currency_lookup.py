@@ -11,6 +11,7 @@ TABLE_NAME = "CURRENCYLOOKUP"
 def create_currency_lookup_table(conn):
     """
     Create the CURRENCYLOOKUP table with necessary fields.
+    
     """
     create_sql = f"""
     CREATE TABLE IF NOT EXISTS {TABLE_NAME} (

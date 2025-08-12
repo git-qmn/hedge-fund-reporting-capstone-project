@@ -12,6 +12,7 @@ TABLE_NAME = "PORTFOLIOATTRIBUTES"
 def create_portfolio_attributes_table_if_not_exists(conn):
     """
     Create the PORTFOLIOATTRIBUTES table in Snowflake if it does not exist.
+    
     """
     create_table_sql = f"""
     CREATE TABLE IF NOT EXISTS {TABLE_NAME} (

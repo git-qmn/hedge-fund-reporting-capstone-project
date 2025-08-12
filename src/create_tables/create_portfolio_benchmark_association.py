@@ -12,6 +12,7 @@ TABLE_NAME = "PORTFOLIOBENCHMARKASSOCIATION"
 def create_portfolio_benchmark_table(conn):
     """
     Create the PORTFOLIOBENCHMARKASSOCIATION table in Snowflake if it does not exist.
+    
     """
     create_sql = f"""
     CREATE TABLE IF NOT EXISTS {TABLE_NAME} (

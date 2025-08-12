@@ -11,6 +11,7 @@ TABLE_NAME = "PORTFOLIOPERFORMANCE"
 def create_portfolio_performance_table(conn):
     """
     Create the essential PORTFOLIOPERFORMANCE table with only required fields.
+    
     """
     create_sql = f"""
     CREATE TABLE IF NOT EXISTS {TABLE_NAME} (

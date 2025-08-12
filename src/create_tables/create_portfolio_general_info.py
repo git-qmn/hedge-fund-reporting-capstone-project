@@ -10,6 +10,7 @@ TABLE_NAME = "PORTFOLIOGENERALINFO"
 def create_portfolio_table_if_not_exists(conn):
     """
     Ensure the portfolio table exists in Snowflake.
+    
     """
     create_table_sql = f"""
     CREATE TABLE IF NOT EXISTS {TABLE_NAME} (
