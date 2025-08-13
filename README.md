@@ -70,20 +70,18 @@ Add Snowflake credentials and API keys to `.env`.
 
 Here's how to set up your `.env` file for this project:
 
-## **Creating the `.env` File**
-
 1. In the **root directory** of the project, create a new file named `.env`.
 
 2. Add the following variables (replace the placeholder text with your actual keys and credentials):
 
    ```env
-   OPENAI_API_KEY=your_openai_api_key_here
-   SNOWFLAKE_USER=your_snowflake_username_here
-   SNOWFLAKE_PASSWORD=your_snowflake_password_here
-   SNOWFLAKE_ACCOUNT=your_snowflake_account_identifier_here
-   SNOWFLAKE_WAREHOUSE=your_snowflake_warehouse_name_here
-   SNOWFLAKE_DATABASE=your_snowflake_database_name_here
-   SNOWFLAKE_SCHEMA=your_snowflake_schema_name_here
+   OPENAI_API_KEY="your_openai_api_key_here"
+   SNOWFLAKE_USER="your_snowflake_username_here"
+   SNOWFLAKE_PASSWORD="your_snowflake_password_here"
+   SNOWFLAKE_ACCOUNT="your_snowflake_account_identifier_here"
+   SNOWFLAKE_WAREHOUSE="your_snowflake_warehouse_name_here"
+   SNOWFLAKE_DATABASE="your_snowflake_database_name_here"
+   SNOWFLAKE_SCHEMA="your_snowflake_schema_name_here"
    ```
 
 3. Save the file.
@@ -92,7 +90,7 @@ Here's how to set up your `.env` file for this project:
 
    * The `.gitignore` in this project is already set up to exclude `.env`.
 
-## **Why This Is Needed**
+#### **Why This Is Needed**
 
 * The `.env` file allows the project to securely load API keys and database credentials without hardcoding them in the source code.
 * Environment variables are accessed in Python using the `os.getenv()` function.
