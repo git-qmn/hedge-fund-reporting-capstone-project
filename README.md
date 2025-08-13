@@ -75,13 +75,19 @@ Here's how to set up your `.env` file for this project:
 2. Add the following variables (replace the placeholder text with your actual keys and credentials):
 
    ```env
+   ALPHA_VANTAGE_API_KEY="your_key_here"
+   POLYGON_API_KEY="your_key_here"
    OPENAI_API_KEY="your_openai_api_key_here"
+
+   SNOWFLAKE_ACCOUNT="a*****e-*******"
    SNOWFLAKE_USER="your_snowflake_username_here"
    SNOWFLAKE_PASSWORD="your_snowflake_password_here"
-   SNOWFLAKE_ACCOUNT="your_snowflake_account_identifier_here"
+   SNOWFLAKE_ROLE="your_snowflake_role_here"
    SNOWFLAKE_WAREHOUSE="your_snowflake_warehouse_name_here"
    SNOWFLAKE_DATABASE="your_snowflake_database_name_here"
    SNOWFLAKE_SCHEMA="your_snowflake_schema_name_here"
+   PYTHONPATH=.
+   
    ```
 
 3. Save the file.
