@@ -2,16 +2,28 @@
 
 ## Overview
 
-This repository contains a Python-based data ingestion and generation framework for simulating a large, diversified asset manager's datasets. It supports **multi-source data ingestion**, **data quality validation**, and **Snowflake integration**, in alignment with the Assette MSBA Capstone project requirements.
+This project is part of the BU Questrom MSBA Capstone Project 2025 in collaboration with Assette LLC, a SaaS provider to the institutional investment management industry. The goal is to create a fully functional “model client” dataset simulating a large, diversified asset manager's operations.
+
+The project implements an automated data pipeline to populate a Snowflake database with synthetic and freely available data across multiple domains: performance, holdings, benchmarks, currencies, attributes, and qualitative disclosures. Data is ingested from APIs (Yahoo Finance, Alpha Vantage, Polygon.io), generated synthetically, validated for quality, and inserted into Snowflake using structured, modular Python scripts.
+
+This system enables realistic simulations for sales demos, QA testing, and R\&D without using proprietary client data.
+
+---
 
 ## Key Features
 
-* Synthetic and API-sourced financial datasets (Yahoo Finance, Alpha Vantage, Polygon.io)
-* Portfolio, benchmark, holdings, currency, and disclosure data
-* Daily, monthly, and periodic performance updates
-* Automated validation before insertion into Snowflake
-* Duplicate prevention for existing records
-* Configurable via `.env` file
+* Multi-source data ingestion: Alpha Vantage, Polygon.io, Yahoo Finance, OpenAI
+* Synthetic data generation for performance, holdings, and qualitative content
+* Automated data validation and duplicate prevention
+* Configurable environment variables for Snowflake and API keys
+* Modular table creation and insertion scripts
+
+---
+
+## Contribution
+
+Quan Nguyen
+Victoria Carlsten
 
 ---
 
@@ -52,47 +64,19 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Edit `.env` and add your Snowflake credentials + API keys:
+Add Snowflake credentials and API keys to `.env`.
 
-```env
-SNOWFLAKE_USER=your_username
-SNOWFLAKE_PASSWORD=your_password
-SNOWFLAKE_ACCOUNT=your_account
-SNOWFLAKE_WAREHOUSE=COMPUTE_WH
-SNOWFLAKE_DATABASE=ASSETTE_DB
-SNOWFLAKE_SCHEMA=PUBLIC
+### 5. Create required Snowflake tables
 
-ALPHA_VANTAGE_API_KEY=your_alpha_vantage_key
-POLYGON_API_KEY=your_polygon_key
-OPENAI_API_KEY=your_openai_key
-```
+Run each `create_*.py` file to create schema.
 
-### 5. Create all required Snowflake tables
-
-Run each `create_*.py` file:
-
-```bash
-python create_benchmark_general_info.py
-python create_benchmark_performance.py
-python create_currency_lookup.py
-python create_disclosure_info.py
-python create_holdings_details.py
-python create_portfolio_attributes_table.py
-python create_portfolio_benchmark_association.py
-python create_portfolio_general_info.py
-python create_portfolio_performance.py
-python create_product_master.py
-python create_qualitative_info.py
-```
-
-### 6. Insert & generate data
+### 6. Insert and generate data
 
 Example:
 
 ```bash
 python insert_generate_data/generate_insert_benchmark_general_info.py
 python insert_generate_data/pull_insert_foreign_benchmark_performance.py
-python insert_generate_data/pull_insert_polygon_benchmark.py
 ```
 
 ### 7. Verify in Snowflake
@@ -103,20 +87,21 @@ SELECT * FROM BENCHMARKPERFORMANCE LIMIT 10;
 
 ---
 
-## Repository Structure
-
-* **Table Creation Scripts** – create Snowflake tables
-* **Data Insertion & Generation** (`/insert_generate_data`) – fetch, generate, validate, insert data
-* **Config & Utilities** – `.env`, JSON config files, database connection helpers
-
----
-
 ## Validation & Quality Control
 
 * Checks for missing or invalid data
 * Removes duplicates
 * Converts dates to Snowflake-compatible formats
 * Skips inserting rows that already exist
+
+---
+
+## Contact
+
+For questions or suggestions, contact:
+
+* Quan Minh Nguyen – [qmn@bu.edu](mailto:qmn@bu.edu)
+* Victoria Carlsten – [carlsten@bu.edu](mailto:carlsten@bu.edu)
 
 ---
 
