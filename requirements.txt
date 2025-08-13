@@ -4,4 +4,9 @@ numpy == 1.26.3
 openai == 1.10.0
 SQLAlchemy == 2.0.29
 snowflake-connector-python
-snowflake-connector-python[pandas]
+requests
+yfinance
+python-dotenv
+beautifulsoup4
+lxml
+
