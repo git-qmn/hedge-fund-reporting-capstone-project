@@ -1,0 +1,38 @@
+## PE Cheatsheet & Assumptions – Hedge Fund Data Pipeline
+
+### **Assumptions**
+
+1. All foreign benchmark prices are stored in **USD** for consistency across calculations.
+2. Portfolio and benchmark codes are **unique** across the system to avoid conflicts during joins.
+3. Synthetic performance data generation uses **fixed random seeds** for reproducibility.
+4. Historical benchmark and market data fetched from **Yahoo Finance** (`yfinance`) is accurate as of fetch time; no backfill beyond API-provided range.
+5. Strategy and firm qualitative information is **AI-generated** with **manual review** for accuracy.
+6. Portfolio inception dates **precede** performance history dates to ensure logical consistency.
+
+---
+
+### **Design Decisions**
+
+1. Used **Yahoo Finance API** for historical benchmark data due to free access and broad coverage.
+2. Used **OpenAI API** for qualitative generation (e.g., strategy descriptions) to speed up manual writing.
+3. Chose **Snowflake** as the data warehouse for scalability and integration with the client’s architecture.
+4. Kept **table creation scripts modular** (one file per table) to simplify updates and debugging.
+5. Foreign currency conversion is handled in a separate **CURRENCYLOOKUP** table to avoid repetitive lookups in core performance queries.
+
+---
+
+## **Execution Order**
+
+1. Run all table creation scripts in `create_tables/` to create the 11 Snowflake tables.
+2. Run `generate_insert_qualitative_info.py` to create a macro view of strategies and firm info.
+3. Run `generate_insert_product_master.py` – Fetches unique strategy sections from `STRATEGYINFO`.
+4. Run `generate_insert_portfolio_general_info.py` – Creates portfolio codes based on user inputs/instructions.
+5. Run `generate_insert_portfolio_performance.py` – Generates synthetic portfolio performance data.
+6. Run `pull_insert_benchmark_performance.py` – Fetches benchmark performance data from Yahoo Finance (`yfinance`).
+7. Run `generate_insert_benchmark_general_info.py` – Adds data to `BENCHMARKGENERALINFO`.
+8. Run `generate_insert_portfolio_benchmark_association.py` – Links benchmarks with portfolios.
+9. Run `generate_insert_currency_lookup.py` – Populates exchange rate, price min, and price max data.
+10. Run `generate_insert_disclosure_info.py` – Inserts disclosure-related information.
+11. Run `generate_insert_holdings.py` – Loads holdings details with security-level information.
+12. Run `pull_insert_foreign_benchmark_performance.py` – Retrieves foreign benchmark performance data.
+13. Run `pull_insert_polygon_benchmark.py` – Fetches additional benchmark data from Polygon API if needed.

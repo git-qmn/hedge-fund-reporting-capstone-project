@@ -1,0 +1,9 @@
+pandas
+numpy
+requests
+yfinance
+python-dotenv
+snowflake-connector-python
+openai
+beautifulsoup4
+lxml

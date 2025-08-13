@@ -1,0 +1,154 @@
+{
+  "valid_currencies": {
+    "USD": {
+      "name": "US Dollar",
+      "price_min": 0.01,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "EUR": {
+      "name": "Euro",
+      "price_min": 0.01,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "GBP": {
+      "name": "British Pound",
+      "price_min": 0.01,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "JPY": {
+      "name": "Japanese Yen",
+      "price_min": 1,
+      "price_max": 100000000,
+      "costbasis_max": 100000000000
+    },
+    "CHF": {
+      "name": "Swiss Franc",
+      "price_min": 0.01,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "CAD": {
+      "name": "Canadian Dollar",
+      "price_min": 0.01,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "AUD": {
+      "name": "Australian Dollar",
+      "price_min": 0.01,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "NZD": {
+      "name": "New Zealand Dollar",
+      "price_min": 0.01,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "CNY": {
+      "name": "Chinese Yuan Renminbi",
+      "price_min": 0.01,
+      "price_max": 10000000,
+      "costbasis_max": 10000000000
+    },
+    "HKD": {
+      "name": "Hong Kong Dollar",
+      "price_min": 0.01,
+      "price_max": 10000000,
+      "costbasis_max": 10000000000
+    },
+    "SGD": {
+      "name": "Singapore Dollar",
+      "price_min": 0.01,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "INR": {
+      "name": "Indian Rupee",
+      "price_min": 0.1,
+      "price_max": 1000000,
+      "costbasis_max": 10000000000
+    },
+    "KRW": {
+      "name": "South Korean Won",
+      "price_min": 1,
+      "price_max": 10000000000,
+      "costbasis_max": 100000000000
+    },
+    "SEK": {
+      "name": "Swedish Krona",
+      "price_min": 0.1,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "NOK": {
+      "name": "Norwegian Krone",
+      "price_min": 0.1,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "DKK": {
+      "name": "Danish Krone",
+      "price_min": 0.1,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "ZAR": {
+      "name": "South African Rand",
+      "price_min": 0.1,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "MXN": {
+      "name": "Mexican Peso",
+      "price_min": 0.1,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "BRL": {
+      "name": "Brazilian Real",
+      "price_min": 0.1,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "RUB": {
+      "name": "Russian Ruble",
+      "price_min": 0.1,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "TRY": {
+      "name": "Turkish Lira",
+      "price_min": 0.1,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "PLN": {
+      "name": "Polish Zloty",
+      "price_min": 0.1,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "CZK": {
+      "name": "Czech Koruna",
+      "price_min": 0.1,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    },
+    "HUF": {
+      "name": "Hungarian Forint",
+      "price_min": 1,
+      "price_max": 100000000,
+      "costbasis_max": 1000000000
+    },
+    "ILS": {
+      "name": "Israeli Shekel",
+      "price_min": 0.1,
+      "price_max": 1000000,
+      "costbasis_max": 1000000000
+    }
+  }
+}
