@@ -2,11 +2,11 @@
 
 ## Overview
 
-This project is part of the BU Questrom MSBA Capstone Project 2025 in collaboration with Assette LLC, a SaaS provider to the institutional investment management industry. The goal is to create a fully functional “model client” dataset simulating a large, diversified asset manager's operations.
+This project is part of the BU Questrom MSBA Capstone Project 2025 in collaboration with Assette LLC, a SaaS provider to the institutional investment management industry. The goal is to create an automated pipeline that simulates a large, diversified asset manager's operations, from data ingestion to storage and validation in Snowflake.
 
-The project implements an automated data pipeline to populate a Snowflake database with synthetic and freely available data across multiple domains: performance, holdings, benchmarks, currencies, attributes, and qualitative disclosures. Data is ingested from APIs (Yahoo Finance, Alpha Vantage, Polygon.io), generated synthetically, validated for quality, and inserted into Snowflake using structured, modular Python scripts.
+The project implements an end-to-end data pipeline to populate a Snowflake database with synthetic and freely available data across multiple domains: performance, holdings, benchmarks, currencies, attributes, and qualitative disclosures. Data is ingested from APIs (Yahoo Finance, Alpha Vantage, Polygon.io), generated synthetically, validated for quality, and inserted into Snowflake using structured, modular Python scripts.
 
-This system enables realistic simulations for sales demos, QA testing, and R\&D without using proprietary client data.
+This system enables realistic simulations for sales demos, QA testing, and R&D without using proprietary client data.
 
 ---
 
